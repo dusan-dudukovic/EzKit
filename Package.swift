@@ -6,10 +6,7 @@ import PackageDescription
 let package = Package(
     name: "EzKit",
     platforms: [
-        .iOS(.v13),
-        .macOS(.v11),
-        .watchOS(.v5),
-        .tvOS(.v14)
+        .iOS(.v13)
     ],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
