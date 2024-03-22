@@ -4,7 +4,7 @@ Pod::Spec.new do |spec|
   spec.version      = "0.0.1"
   spec.summary      = "Easy to use, animated UIView subclasses, with selection and highlighting logic."
   spec.description  = <<-DESC
-                     EzKit is a collection of custom UIKit components, based on EzView - selectable and highlightable UIView subclass. All interaction is animated and delegated, with high customization options. Need a button with 2 Labels and 2 Images? I got you! An out of the box, animated checkbox in UIKit? Ez.
+                     EzKit is a collection of custom UIKit components, based on EzView - selectable and highlightable UIView subclass. All interaction is animated and delegated, with high customization options. Need a button with 2 labels and 2 images? I got you! An out of the box, animated checkbox in UIKit? Ez.
                    DESC
 
   spec.homepage     = "https://github.com/dusan-dudukovic/EzKit"
