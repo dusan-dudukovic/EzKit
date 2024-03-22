@@ -1,12 +1,12 @@
 # EzKit
 
-EzKit is a collection of custom UIKit components, based on EzView - selectable and highlightable UIView subclass. All interaction is animated and delegated, with high customization options. Need a button with 2 Labels and 2 Images? I got you! An out of the box, animated checkbox in UIKit? Ez.
+`EzKit` is a collection of custom UIKit components, based on `EzView` - selectable and highlightable UIView subclass. All interaction is animated and delegated, with high customization options. Need a button with 2 Labels and 2 Images? I got you! An out of the box, animated checkbox in UIKit? Ez.
 
 ## EzView
 Easy to use and powerful UIView subclass. It will react to user's long presses and allows highlighting and selection actions, while being animated.
 
 ### Configuration
-Configure EzView with one of two functions, using `EzViewStyle` or `EzViewConfiguration`.
+Configure `EzView` with one of two functions, using `EzViewStyle` or `EzViewConfiguration`.
 
 `EzViewStyle` configuration enum offers predefined behavior with smaller available configuration options, but easier to implement. 
 
