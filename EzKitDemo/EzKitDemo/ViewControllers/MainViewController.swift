@@ -97,13 +97,15 @@ class MainViewController: UIViewController {
             let text = "\(isSelected)"
             self?.consoleIsSelectedLabel.text = text
         }
+        
         consoleTestEzView.onHighlight = { [weak self] isHighlighted in
             let text = "\(isHighlighted)"
             self?.consoleIsHighlightedLabel.text = text
         }
-        consoleTestEzView.onAnimationStateChange = { [weak self] state in
-            print("EzView animation state:", state)
-        }
+        
+//        consoleTestEzView.onAnimationStateChange = { [weak self] state in
+//            print("EzView animation state:", state)
+//        }
         
         buttonEzView.onSelection = { _ in
             // dont need to check for selection here
