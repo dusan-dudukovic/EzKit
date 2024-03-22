@@ -12,7 +12,7 @@ Configure `EzView` with one of two functions, using `EzViewStyle` or `EzViewConf
 
 #### Option 1 (ez) - `EzViewStyle`
 
-`EzViewStyle` configuration enum offers predefined behavior with smaller available configuration options, but is easier to implement. 
+`EzViewStyle` configuration enum offers predefined behavior with less configuration options, but is easier to implement. 
 
 ```swift
 ezView.configure(style: .ez(tintColor: .systemBlue))
