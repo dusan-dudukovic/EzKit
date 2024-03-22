@@ -63,6 +63,7 @@ If you prefer to use delegates, `EzView` has got that too! Make your desired cla
 
 ```swift
 class MainViewController: UIViewController, EzViewDelegate {
+
     override func viewDidLoad() {
         super.viewDidLoad()
         ezView.delegate = self
