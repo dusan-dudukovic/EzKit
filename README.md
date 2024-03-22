@@ -6,18 +6,18 @@
 Easy to use and powerful UIView subclass. It will react to user's long presses and allows highlighting and selection actions, while being animated.
 
 ### Configuration
-Configure `EzView` with one of two functions, using `EzViewStyle` or `EzViewConfiguration`.
+Configure `EzView` with one of two functions, using `EzViewStyle` or `EzViewConfiguration`. You can use either approach.
 
-`EzViewStyle` configuration enum offers predefined behavior with smaller available configuration options, but easier to implement. 
+#### Option 1 (ez) - `EzViewStyle`
+
+`EzViewStyle` configuration enum offers predefined behavior with smaller available configuration options, but is easier to implement. 
 
 ```swift
-    ezView.configure(style: .ez(tintColor: .systemBlue))
-    // or
-    ezView.configure(style: .main(selectedBorderColor: .systemIndigo,
-                                  selectedBackgroundColor: .systemIndigo.withAlphaComponent(0.1),
-                                  selectedCornerRadius: 12))
+        ezView.configure(style: .ez(tintColor: .systemBlue))
 ```
 Check out all of the possible cases to fit your desired behaviour. For example, `.selectionOnly` configuration style disables highlight animation and leaves only the selection one.
+
+#### Option 2 (advanced) - `EzViewStyle`
 
 `EzViewConfiguration` configuration class offers all of the possible configuration properties, so that you can tailor `EzView` to your specific needs. You do not need to provide all of the initialization properties - they will take the default values, which are defined in `EzConstants.swift` file.
 
