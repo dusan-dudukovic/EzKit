@@ -4,6 +4,39 @@
 
 https://github.com/dusan-dudukovic/EzKit/assets/88319632/a1f94626-cf75-4072-9a3a-38f1dbd07477
 
+## Installation
+
+### Swift Package Manager
+
+In your Xcode project, go to 'File > 'Add Package Dependencies...' and then enter the package URL in the search field: `https://github.com/dusan-dudukovic/EzKit`. Choose 'Up to Next Major Version' and you're good to go!
+
+If you are editing your `Package.swift` file directly, add a value into the `dependencies` array:
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/dusan-dudukovic/EzKit", .upToNextMajor(from: "0.1.0"))
+]
+```
+
+### CocoaPods
+
+Check out [CocoaPods](https://cocoapods.org/) for CocoaPods installation guide.
+
+With CocoaPods installed, navigate to your project folder and run `pod init`. When you have your `Podfile` created, simply add the following line into it:
+
+```swift
+    pod 'EzKit-Pod'
+```
+
+You can also specify the version you want with the `~>` operator, if you do not want your pod to update to the latest version on accident, for example:
+
+
+```swift
+    pod 'EzKit-Pod', '~> 0.1.0'
+```
+
+Save the `Podfile` changes and run `pod install` command. After that, use the created `.xcworkspace` file to enter your project.
+
 ## EzView
 
 Easy to use and powerful UIView subclass. It will react to user's long presses and allows highlighting and selection actions, while being animated.
