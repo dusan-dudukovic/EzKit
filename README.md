@@ -14,7 +14,7 @@ If you are editing your `Package.swift` file directly, add a value into the `dep
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/dusan-dudukovic/EzKit", .upToNextMajor(from: "0.1.0"))
+    .package(url: "https://github.com/dusan-dudukovic/EzKit", .upToNextMajor(from: "0.1.1"))
 ]
 ```
 
@@ -32,7 +32,7 @@ You can also specify the version you want with the `~>` operator, if you do not 
 
 
 ```swift
-    pod 'EzKit-Pod', '~> 0.1.0'
+    pod 'EzKit-Pod', '~> 0.1.1'
 ```
 
 Save the `Podfile` changes and run `pod install` command. After that, use the created `.xcworkspace` file to enter your project.
