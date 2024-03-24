@@ -8,6 +8,8 @@ https://github.com/dusan-dudukovic/EzKit/assets/88319632/a1f94626-cf75-4072-9a3a
 
 Easy to use and powerful UIView subclass. It will react to user's long presses and allows highlighting and selection actions, while being animated.
 
+https://github.com/dusan-dudukovic/EzKit/assets/88319632/2cb03ccd-8c15-4baa-9905-0aef5126f4d8
+
 ### Configuration
 
 Configure `EzView` with one of two functions, using `EzViewStyle` or `EzViewConfiguration`. You can use either approach.
@@ -93,6 +95,10 @@ class MainViewController: UIViewController, EzViewDelegate {
 
 On the first look, `EzButton` will behave as a regular `UIButton`, but is so much more! This is where `EzView` shows its true powers. `EzButton` is a `EzView` subclass with 2 labels and 2 images added as subviews, organized in the familiar `UIButton` fashion. However, because of the `EzView`'s implementation, this button is fully animated and with options to customize everything!
 
+
+https://github.com/dusan-dudukovic/EzKit/assets/88319632/d131f208-3317-4d48-abcd-db5178e893fe
+
+
 Just like with `EzView`, you have multiple ways to configure `EzButton`. Almost all of the properties will have default values, if you just want things to work out of the box.
 ```swift
 ezButton.configure(button: .ez(),
@@ -116,6 +122,8 @@ Use closures/delegate functions like before to catch the taps and highlights and
 ## EzCheckbox
 
 `EzCheckbox` is another example of how you can utilize selection states of `EzView`. Simply define the images you want to be applied to each state, provide a `EzViewStyle` and tap away!
+
+https://github.com/dusan-dudukovic/EzKit/assets/88319632/f124c8ea-29c9-4f60-8ba9-a72117317da6
 
 ```swift
 ezCheckbox.configure(style: .ez(tintColor: .systemGreen),
