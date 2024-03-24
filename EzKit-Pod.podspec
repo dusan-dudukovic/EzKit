@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
 
-  spec.name         = "EzKit"
+  spec.name         = "EzKit-Pod"
   spec.version      = "0.0.1"
   spec.summary      = "Easy to use, animated UIView subclasses, with selection and highlighting logic."
   spec.description  = <<-DESC
