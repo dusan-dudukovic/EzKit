@@ -404,16 +404,81 @@
                                     <constraint firstAttribute="height" constant="48" id="WeI-EF-BZB"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ruZ-Bf-8Lx" userLabel="Container View">
+                                <rect key="frame" x="16" y="381" width="361" height="182"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eBw-Ae-GvM" customClass="EzView" customModule="EzKit">
+                                        <rect key="frame" x="0.0" y="0.0" width="153" height="96"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AGo-Fd-LR8">
+                                                <rect key="frame" x="8" y="8" width="137" height="80"/>
+                                                <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus placerat maximus massa sed pretium. Vestibulum lacinia justo vitae odio iaculis congue. Pellentesque magna purus, mattis nec risus nec, cursus aliquet orci.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="AGo-Fd-LR8" secondAttribute="bottom" constant="8" id="29A-BS-py2"/>
+                                            <constraint firstAttribute="trailing" secondItem="AGo-Fd-LR8" secondAttribute="trailing" constant="8" id="SIS-HS-XVa"/>
+                                            <constraint firstItem="AGo-Fd-LR8" firstAttribute="leading" secondItem="eBw-Ae-GvM" secondAttribute="leading" constant="8" id="cOP-cs-p7X"/>
+                                            <constraint firstItem="AGo-Fd-LR8" firstAttribute="top" secondItem="eBw-Ae-GvM" secondAttribute="top" constant="8" id="hqc-pv-hbQ"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OiH-LL-zq0" customClass="EzCheckbox" customModule="EzKit">
+                                        <rect key="frame" x="161" y="0.0" width="200" height="44"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="Lc0-7i-LxQ"/>
+                                            <constraint firstAttribute="width" constant="200" id="PDS-d4-lX9"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tmC-aU-31K" customClass="EzButton" customModule="EzKit">
+                                        <rect key="frame" x="0.0" y="104" width="361" height="48"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="eCn-2d-4bl"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V7S-ky-JHC" customClass="EzCheckbox" customModule="EzKit">
+                                        <rect key="frame" x="161" y="52" width="200" height="44"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="eco-b7-7LI"/>
+                                            <constraint firstAttribute="height" constant="44" id="fqX-ot-t6i"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="V7S-ky-JHC" secondAttribute="trailing" id="EbZ-p7-sPM"/>
+                                    <constraint firstItem="OiH-LL-zq0" firstAttribute="leading" secondItem="eBw-Ae-GvM" secondAttribute="trailing" constant="8" symbolic="YES" id="Hkg-R4-mu1"/>
+                                    <constraint firstItem="eBw-Ae-GvM" firstAttribute="leading" secondItem="ruZ-Bf-8Lx" secondAttribute="leading" id="Ii8-7d-Fnm"/>
+                                    <constraint firstItem="V7S-ky-JHC" firstAttribute="top" secondItem="OiH-LL-zq0" secondAttribute="bottom" constant="8" symbolic="YES" id="P31-d7-0Sh"/>
+                                    <constraint firstItem="eBw-Ae-GvM" firstAttribute="bottom" secondItem="V7S-ky-JHC" secondAttribute="bottom" id="TDu-03-jE5"/>
+                                    <constraint firstAttribute="trailing" secondItem="OiH-LL-zq0" secondAttribute="trailing" id="Y8m-Sz-IxN"/>
+                                    <constraint firstAttribute="trailing" secondItem="tmC-aU-31K" secondAttribute="trailing" id="bA8-K6-vq5"/>
+                                    <constraint firstItem="tmC-aU-31K" firstAttribute="top" secondItem="eBw-Ae-GvM" secondAttribute="bottom" constant="8" id="dmo-Vz-Cdg"/>
+                                    <constraint firstItem="OiH-LL-zq0" firstAttribute="top" secondItem="ruZ-Bf-8Lx" secondAttribute="top" id="tsa-wb-4YK"/>
+                                    <constraint firstAttribute="height" constant="182" id="u2I-OS-Ijp"/>
+                                    <constraint firstItem="tmC-aU-31K" firstAttribute="leading" secondItem="ruZ-Bf-8Lx" secondAttribute="leading" id="uJB-y3-4O7"/>
+                                    <constraint firstItem="eBw-Ae-GvM" firstAttribute="top" secondItem="ruZ-Bf-8Lx" secondAttribute="top" id="zie-XD-lLB"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="QIO-Bi-Vl7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="QIO-Bi-Vl7" firstAttribute="trailing" secondItem="R1M-pJ-E1n" secondAttribute="trailing" constant="16" id="6J5-aC-Z9H"/>
                             <constraint firstItem="HDR-u8-PVg" firstAttribute="top" secondItem="R1M-pJ-E1n" secondAttribute="bottom" constant="8" symbolic="YES" id="80T-X2-7kl"/>
+                            <constraint firstItem="QIO-Bi-Vl7" firstAttribute="trailing" secondItem="ruZ-Bf-8Lx" secondAttribute="trailing" constant="16" id="Bhq-ht-21E"/>
                             <constraint firstItem="TSM-Uq-mxo" firstAttribute="centerX" secondItem="J5K-jy-LBe" secondAttribute="centerX" id="KTb-0e-hHh"/>
                             <constraint firstItem="R1M-pJ-E1n" firstAttribute="top" secondItem="QIO-Bi-Vl7" secondAttribute="top" constant="32" id="N0M-gw-n98"/>
+                            <constraint firstItem="ruZ-Bf-8Lx" firstAttribute="leading" secondItem="QIO-Bi-Vl7" secondAttribute="leading" constant="16" id="UiA-Tb-f7s"/>
                             <constraint firstItem="HDR-u8-PVg" firstAttribute="trailing" secondItem="R1M-pJ-E1n" secondAttribute="trailing" id="bNB-rK-kc7"/>
                             <constraint firstItem="HDR-u8-PVg" firstAttribute="leading" secondItem="R1M-pJ-E1n" secondAttribute="leading" id="bVi-PN-YU1"/>
+                            <constraint firstItem="ruZ-Bf-8Lx" firstAttribute="top" secondItem="TSM-Uq-mxo" secondAttribute="bottom" constant="64" id="m8U-ke-fkq"/>
                             <constraint firstItem="R1M-pJ-E1n" firstAttribute="leading" secondItem="QIO-Bi-Vl7" secondAttribute="leading" constant="16" id="nh5-n0-TeX"/>
                             <constraint firstItem="TSM-Uq-mxo" firstAttribute="top" secondItem="R1M-pJ-E1n" secondAttribute="bottom" constant="90" id="shS-mK-MZV"/>
                         </constraints>
@@ -421,13 +486,17 @@
                     <navigationItem key="navigationItem" title="Components" id="7bs-tz-cD1"/>
                     <connections>
                         <outlet property="ezButton" destination="R1M-pJ-E1n" id="MHd-pb-tyv"/>
+                        <outlet property="ezButton2" destination="tmC-aU-31K" id="upM-OY-LSV"/>
                         <outlet property="ezCheckbox" destination="TSM-Uq-mxo" id="FDh-j0-J3x"/>
+                        <outlet property="ezCheckbox2" destination="OiH-LL-zq0" id="3yC-gL-g4k"/>
+                        <outlet property="ezCheckbox3" destination="V7S-ky-JHC" id="1O6-GJ-m78"/>
                         <outlet property="imagesEzButton" destination="HDR-u8-PVg" id="tW8-5Q-iZG"/>
+                        <outlet property="loremIpsumEzView" destination="eBw-Ae-GvM" id="z6J-Rx-ViY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VDv-lQ-tZA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="969" y="4"/>
+            <point key="canvasLocation" x="968.70229007633588" y="3.5211267605633805"/>
         </scene>
     </scenes>
     <resources>
@@ -435,7 +504,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGreenColor">
-            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

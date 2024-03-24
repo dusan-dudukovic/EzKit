@@ -15,6 +15,11 @@ class ComponentsViewController: UIViewController {
     @IBOutlet weak var imagesEzButton: EzButton!
     @IBOutlet weak var ezCheckbox: EzCheckbox!
     
+    @IBOutlet weak var loremIpsumEzView: EzView!
+    @IBOutlet weak var ezCheckbox2: EzCheckbox!
+    @IBOutlet weak var ezCheckbox3: EzCheckbox!
+    @IBOutlet weak var ezButton2: EzButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,10 +37,35 @@ class ComponentsViewController: UIViewController {
         ezCheckbox.configure(style: .main(selectedBorderColor: .systemGreen,
                                           selectedBackgroundColor: .systemGreen.withAlphaComponent(0.08),
                                           selectedCornerRadius: 22),
-                             text: "I am a checkbox!", textColor: .systemGreen,
+                             text: "I am a checkbox!",
+                             normalTextColor: .systemGreen,
+                             selectedTextColor: .systemGreen,
                              normalStateImage: UIImage(systemName: "circle")!,
                              selectedStateImage: UIImage(systemName: "checkmark.circle")!,
-                             imageTintColor: .systemGreen)
+                             normalImageTintColor: .systemGreen, selectedImageTintColor: .systemGreen)
+        
+        // Intro views
+        loremIpsumEzView.configure(style: .ez(tintColor: .systemIndigo))
+        ezCheckbox2.configure(style: .main(selectedBorderColor: .systemGreen,
+                                           selectedBackgroundColor: .clear,
+                                           selectedCornerRadius: 22),
+                              text: "Task 1",
+                              normalStateImage: UIImage(systemName: "circle")!,
+                              selectedStateImage: UIImage(systemName: "checkmark.circle")!,
+                              normalImageTintColor: .label, selectedImageTintColor: .systemGreen)
+        ezCheckbox3.configure(style: .main(selectedBorderColor: .systemGreen,
+                                           selectedBackgroundColor: .clear,
+                                           selectedCornerRadius: 22),
+                              text: "Task 2",
+                              normalStateImage: UIImage(systemName: "circle")!,
+                              selectedStateImage: UIImage(systemName: "checkmark.circle")!,
+                              normalImageTintColor: .label, selectedImageTintColor: .systemGreen)
+        ezButton2.configure(button: .ez(cornerRadius: 6), titleText: "John Wick",
+                            textColor: .white,
+                            font: .boldSystemFont(ofSize: 16),
+                            alignment: .left)
+        ezButton2.setupSubtitleLabel(text: "iOS Developer", textColor: .white, alignment: .left)
+        ezButton2.setupLeftImageView(image: UIImage(systemName: "person.crop.circle")!, tintColor: .white)
         
         setupCallbacks()
     }
