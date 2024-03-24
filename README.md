@@ -161,7 +161,8 @@ https://github.com/dusan-dudukovic/EzKit/assets/88319632/f124c8ea-29c9-4f60-8ba9
 ```swift
 ezCheckbox.configure(style: .ez(tintColor: .systemGreen),
                      text: "I am a checkbox!",
-                     textColor: .systemGreen,
+                     normalTextColor: .systemGreen,
+                     selectedTextColor: .systemGreen,
                      normalStateImage: UIImage(systemName: "circle")!,
                      selectedStateImage: UIImage(systemName: "checkmark.circle")!)
 ```
