@@ -100,7 +100,7 @@ open class EzView: UIView {
     /// so that the default behavior does not break and add your additional code.
     ///
     /// If you want to remove the default behavior, do not call `super.updateUI()` (not recommended).
-    public func updateUI() {
+    open func updateUI() {
         guard let config = configuration else { return }
         if isSelected {
             layer.borderWidth = config.selectedState.borderWidth

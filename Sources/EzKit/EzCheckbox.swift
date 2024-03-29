@@ -80,7 +80,7 @@ open class EzCheckbox: EzView {
         self.selectedImageTintColor = selectedImageTintColor
     }
     
-    public override func updateUI() {
+    open override func updateUI() {
         super.updateUI()
         
         titleLabel.textColor = isSelected ? selectedTextColor : normalTextColor
