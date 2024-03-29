@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 /// Highly flexible, animated button using the core benefits of `EzView`.
-public class EzButton: EzView {
+open class EzButton: EzView {
     
     // All of these are public so you can access them and tweak them if you want
     public let titleLabel = UILabel()

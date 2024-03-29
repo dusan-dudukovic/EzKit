@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-public class EzCheckbox: EzView {
+open class EzCheckbox: EzView {
     
     public let imageView = UIImageView()
     public let titleLabel = UILabel()

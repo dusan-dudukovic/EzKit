@@ -20,7 +20,7 @@ public protocol EzViewDelegate: AnyObject {
 
 // MARK: Main logic
 /// UIView subclass. Allows selection and highlighting of any UIView. Use closures/delegate functions to recieve events.
-public class EzView: UIView {
+open class EzView: UIView {
     /// Callback triggered when selection occurs. Use the bool value provided to determine if the view is currently selected or not.
     public var onSelection: ((Bool) -> ())?
     /// Callback triggered when highlighting occurs. Use the bool value provided to determine if the view is currently highlighted or not.
