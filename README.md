@@ -14,7 +14,7 @@ If you are editing your `Package.swift` file directly, add a value into the `dep
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/dusan-dudukovic/EzKit", .upToNextMajor(from: "0.3.1"))
+    .package(url: "https://github.com/dusan-dudukovic/EzKit", .upToNextMajor(from: "0.4.0"))
 ]
 ```
 
