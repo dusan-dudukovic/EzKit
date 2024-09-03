@@ -23,12 +23,17 @@ open class EzButton: EzView {
     /// (should have less than 1000 priority).
     public let middleStackView = UIStackView()
     
-    public override func awakeFromNib() {
-        super.awakeFromNib()
-        
+    // MARK: Initializers
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
         setupViews()
     }
     
+    required public init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setupViews()
+    }
+
     /// `EzButton` specific configuration function. Style is applied to `EzView` (superclass) and overrides it, while other parameters are applied to the `titleLabel`.
     ///
     /// Use setup functions to setup other elements - `setupSubtitleLabel`, `setupLeftImageView`, `setupRightImageView`.

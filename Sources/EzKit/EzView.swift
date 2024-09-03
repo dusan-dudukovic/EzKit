@@ -70,15 +70,21 @@ open class EzView: UIView {
         return configuration?.selectionAnimationEnabled ?? EzConstants.selectionAnimationEnabled
     }
     
-    public override func awakeFromNib() {
-        super.awakeFromNib()
-        setupGestureRecognizers()
-    }
-    
-    // MARK: Public functions
     /// If you perfer using delegates instead of callbacks, assign a delegate class to this property and handle events there.
     public weak var delegate: EzViewDelegate?
     
+    // MARK: Initializers
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupGestureRecognizers()
+    }
+    
+    required public init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setupGestureRecognizers()
+    }
+
+    // MARK: Public functions
     /// Simple configuration. Configure the view's behaviour using `EzViewStyle`. For full configuration, use `configure(configuration: EzViewConfiguration)`.
     public func configure(style: EzViewStyle) {
         self.configuration = style.generateConfiguration()
