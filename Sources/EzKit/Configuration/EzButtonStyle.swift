@@ -17,6 +17,9 @@ public enum EzButtonStyle {
                      borderWidth: CGFloat = EzConstants.defaultBorderWidth,
                      cornerRadius: CGFloat = EzConstants.defaultCornerRadius)
     
+    /// Selectable button.
+    case selectable(normalState: EzViewState, selectedState: EzViewState)
+    
     public func generateConfiguration() -> EzViewConfiguration {
         switch self {
         case .ez(let color, let radius):
@@ -31,6 +34,8 @@ public enum EzButtonStyle {
                                                                   backgroundColor: .clear,
                                                                   borderWidth: borderWidth,
                                                                   cornerRadius: radius))
+        case .selectable(let normalState, let selectedState):
+            return EzViewConfiguration(normalState: normalState, selectedState: selectedState)
         }
     }
     
