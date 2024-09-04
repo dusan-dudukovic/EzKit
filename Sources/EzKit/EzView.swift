@@ -128,6 +128,7 @@ extension EzView {
         let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(longPress))
         longPressGesture.minimumPressDuration = 0
         longPressGesture.allowableMovement = .infinity
+        longPressGesture.delegate = self
         addGestureRecognizer(longPressGesture)
     }
     
@@ -149,27 +150,6 @@ extension EzView {
         }
     }
     
-    // I decided to go with UILongPressGestureRecognizer because UIScrollView was messing these up pretty badly.
-//    public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        super.touchesBegan(touches, with: event)
-//        highlight()
-//    }
-//    
-//    public override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        super.touchesEnded(touches, with: event)
-//        
-//        if let firstTouch = touches.first {
-//            let touchLocation = firstTouch.location(in: self)
-//            
-//            if CGRectContainsPoint(self.bounds, touchLocation) {
-//                select()
-//            } else {
-//                cancelHighlight()
-//            }
-//        } else {
-//            cancelHighlight()
-//        }
-//    }
 }
 
 extension EzView {
@@ -323,4 +303,13 @@ extension EzView {
         }
         return animationDuration
     }
+}
+
+// MARK: Delegate
+extension EzView: UIGestureRecognizerDelegate {
+    // Support for UIScrollView pan gesture
+    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return otherGestureRecognizer.isKind(of: UIPanGestureRecognizer.self)
+    }
+    
 }
