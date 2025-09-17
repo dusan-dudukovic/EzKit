@@ -155,7 +155,7 @@ extension EzView {
 extension EzView {
     // MARK: Highlight logic
     private func highlight() {
-        guard !animationState.isAnimatingSelection else { return }
+        guard !animationState.isAnimatingSelection.get() else { return }
         _isHighlighted = true
         
         if isHighlightEnabled == true {
@@ -173,7 +173,7 @@ extension EzView {
     
     // MARK: Cancel Highlight logic
     private func cancelHighlight() {
-        guard !animationState.isAnimatingSelection else { return }
+        guard !animationState.isAnimatingSelection.get() else { return }
         _isHighlighted = false
         
         if isHighlightEnabled {
@@ -189,14 +189,14 @@ extension EzView {
     
     // MARK: Select logic
     private func select() {
-        guard !animationState.isAnimatingSelection else { return }
+        guard !animationState.isAnimatingSelection.get() else { return }
         isSelected.toggle()
         
         if isSelectionEnabled {
             let resetScaleDuration = cancelHighlightAnimationDuration()
             let selectionCompletion = { [weak self] in
                 guard let `self` = self else { return }
-                self.animationState.isAnimatingSelection = false
+                self.animationState.isAnimatingSelection.set(false)
                 
                 if self.configuration?.triggerSelectionOnAnimationFinish == true {
                     self.onSelection?(self.isSelected)
@@ -207,7 +207,7 @@ extension EzView {
             layer.removeAllAnimations()
             
             // animation logic start
-            animationState.isAnimatingSelection = true
+            animationState.isAnimatingSelection.set(true)
             if !isHighlighted || !isHighlightEnabled {
                 performBounceAnimation(duration: animationDuration, scale: selectionScale) {
                     selectionCompletion()
@@ -223,9 +223,9 @@ extension EzView {
             
         } else {
             // if isSelectionEnabled == false, we need to animate scale reset here
-            animationState.isAnimatingSelection = true
+            animationState.isAnimatingSelection.set(true)
             performResetScaleAnimation(duration: animationDuration) { [weak self] in
-                self?.animationState.isAnimatingSelection = false
+                self?.animationState.isAnimatingSelection.set(false)
             }
         }
         
