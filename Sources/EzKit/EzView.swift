@@ -70,6 +70,9 @@ open class EzView: UIView {
         return configuration?.selectionAnimationEnabled ?? EzConstants.selectionAnimationEnabled
     }
     
+    /// Main gesture used to handle touches.
+    private var longPressGesture: UILongPressGestureRecognizer?
+
     /// If you perfer using delegates instead of callbacks, assign a delegate class to this property and handle events there.
     public weak var delegate: EzViewDelegate?
     
@@ -101,6 +104,11 @@ open class EzView: UIView {
         return animationState
     }
     
+    /// Cancels  the current gestures - sets its' state to `.cancelled`.
+    public func cancelCurrentGesture() {
+        longPressGesture?.state = .cancelled
+    }
+    
     /// This function triggers on every select action (whenever `isSelected` variable changes values).
     /// For custom behavior on selection, override in subclasses and call `super.updateUI()`,
     /// so that the default behavior does not break and add your additional code.
@@ -125,11 +133,11 @@ open class EzView: UIView {
 // MARK: Gestures
 extension EzView {
     private func setupGestureRecognizers() {
-        let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(longPress))
-        longPressGesture.minimumPressDuration = 0
-        longPressGesture.allowableMovement = .infinity
-        longPressGesture.delegate = self
-        addGestureRecognizer(longPressGesture)
+        longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(longPress))
+        longPressGesture!.minimumPressDuration = 0
+        longPressGesture!.allowableMovement = .infinity
+        longPressGesture!.delegate = self
+        addGestureRecognizer(longPressGesture!)
     }
     
     @objc
@@ -145,6 +153,10 @@ extension EzView {
             } else {
                 cancelHighlight()
             }
+        
+        case .failed, .cancelled:
+            cancelHighlight()
+            
         default:
             break
         }
