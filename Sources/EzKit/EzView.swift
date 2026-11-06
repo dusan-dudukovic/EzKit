@@ -63,10 +63,13 @@ open class EzView: UIView {
     private var selectionScale: CGFloat {
         return configuration?.selectionScale ?? EzConstants.selectionScale
     }
+    private var isDeselectionEnabled: Bool {
+        return configuration?.isDeselectionEnabled.get() ?? EzConstants.isDeselectionEnabled
+    }
     private var isHighlightEnabled: Bool {
         return configuration?.highlightAnimationEnabled ?? EzConstants.highlightAnimationEnabled
     }
-    private var isSelectionEnabled: Bool {
+    private var isSelectionAnimationEnabled: Bool {
         return configuration?.selectionAnimationEnabled ?? EzConstants.selectionAnimationEnabled
     }
     
@@ -107,6 +110,10 @@ open class EzView: UIView {
     /// Cancels  the current gestures - sets its' state to `.cancelled`.
     public func cancelCurrentGesture() {
         longPressGesture?.state = .cancelled
+    }
+    
+    public func setIsDeselectionEnabled(_ isEnabled: Bool) {
+        configuration?.isDeselectionEnabled.set(isEnabled)
     }
     
     /// This function triggers on every select action (whenever `isSelected` variable changes values).
@@ -202,9 +209,17 @@ extension EzView {
     // MARK: Select logic
     private func select() {
         guard !animationState.isAnimatingSelection.get() else { return }
-        isSelected.toggle()
+        if isDeselectionEnabled {
+            isSelected.toggle()
+        } else {
+            if !isSelected {
+                // cant deselect
+            } else {
+                isSelected = true
+            }
+        }
         
-        if isSelectionEnabled {
+        if isSelectionAnimationEnabled {
             let resetScaleDuration = cancelHighlightAnimationDuration()
             let selectionCompletion = { [weak self] in
                 guard let `self` = self else { return }
@@ -245,7 +260,7 @@ extension EzView {
         onHighlight?(isHighlighted)
         delegate?.didHighlight(self, isHighlighted: isHighlighted)
         
-        if configuration?.triggerSelectionOnAnimationFinish == false || !isSelectionEnabled {
+        if configuration?.triggerSelectionOnAnimationFinish == false || !isSelectionAnimationEnabled {
             onSelection?(isSelected)
             delegate?.didSelect(self, isSelected: isSelected)
         }

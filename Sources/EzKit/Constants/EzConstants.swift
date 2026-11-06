@@ -20,4 +20,5 @@ public struct EzConstants {
     public static let highlightAnimationEnabled: Bool = true
     public static let selectionAnimationEnabled: Bool = true
     public static let triggerSelectionOnAnimationFinish: Bool = false
+    public static let isDeselectionEnabled: Bool = true
 }

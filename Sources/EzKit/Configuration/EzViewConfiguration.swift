@@ -31,6 +31,9 @@ public class EzViewConfiguration {
     /// Layer's furthest scale during selection action. Default value is `1.02`.
     public var selectionScale: CGFloat
     
+    /// Default is `true`. If `false`, `isSelected` bool will always return `true` and `onSelected` will never return `false`
+    public var isDeselectionEnabled: ThreadSafeBool
+    
     /// Determines if the highlight animation will trigger. Default value is `true`. Callback and delegate functions trigger regardless of the value of this property.
     public var highlightAnimationEnabled: Bool
     /// Determines if the selection animation will trigger. Default value is `true`. Callback and delegate functions trigger regardless of the value of this property.
@@ -56,6 +59,7 @@ public class EzViewConfiguration {
         self.highlightAnimationEnabled = EzConstants.highlightAnimationEnabled
         self.selectionAnimationEnabled = EzConstants.selectionAnimationEnabled
         self.triggerSelectionOnAnimationFinish = EzConstants.triggerSelectionOnAnimationFinish
+        self.isDeselectionEnabled = .init(EzConstants.isDeselectionEnabled)
     }
 
     /// Complete init with all possible properties. Read property descriptions within the class for more information.
@@ -66,7 +70,9 @@ public class EzViewConfiguration {
                 selectionScale: CGFloat = EzConstants.selectionScale,
                 highlightAnimationEnabled: Bool = EzConstants.highlightAnimationEnabled,
                 selectionAnimationEnabled: Bool = EzConstants.selectionAnimationEnabled,
-                triggerSelectionOnAnimationFinish: Bool = EzConstants.triggerSelectionOnAnimationFinish) {
+                triggerSelectionOnAnimationFinish: Bool = EzConstants.triggerSelectionOnAnimationFinish,
+                isDeselectionEnabled: Bool = EzConstants.isDeselectionEnabled,
+    ) {
         self.normalState = normalState
         self.selectedState = selectedState
         self.animationDuration = animationDuration
@@ -75,6 +81,7 @@ public class EzViewConfiguration {
         self.highlightAnimationEnabled = highlightAnimationEnabled
         self.selectionAnimationEnabled = selectionAnimationEnabled
         self.triggerSelectionOnAnimationFinish = triggerSelectionOnAnimationFinish
+        self.isDeselectionEnabled = .init(isDeselectionEnabled)
     }
     
 }
